@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "907892019100",
+    "firebase_url": "https://others-b574c.firebaseio.com",
+    "project_id": "others-b574c",
+    "storage_bucket": "others-b574c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907892019100:android:295f7d8f2196205a540259",
+        "android_client_info": {
+          "package_name": "com.example.flutter_blog_with_firebase_riverpod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAGuOweQ8n3DEBsrC2edsEbpAyqiLgA0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907892019100:android:40cb59d20b6cd90a",
+        "android_client_info": {
+          "package_name": "com.urdreamapps.faceflag"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAGuOweQ8n3DEBsrC2edsEbpAyqiLgA0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907892019100:android:3107c6c16c3be0e1",
+        "android_client_info": {
+          "package_name": "com.urdreamapps.makeup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAGuOweQ8n3DEBsrC2edsEbpAyqiLgA0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
