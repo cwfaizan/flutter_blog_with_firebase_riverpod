@@ -50,6 +50,6 @@ class PostController extends _$PostController {
     state = const AsyncLoading();
     final postRepository = ref.read(postRepositoryProvider);
     state = await AsyncValue.guard(() => postRepository.deletePost(id));
-    return state.hasError;
+    return state.hasError == false;
   }
 }

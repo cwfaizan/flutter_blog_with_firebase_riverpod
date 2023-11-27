@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blog_with_firebase_riverpod/src/common_widgets/empty_placeholder.dart';
+import 'package:flutter_blog_with_firebase_riverpod/src/localization/string_hardcoded.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/post.dart';
@@ -11,6 +13,7 @@ class EditPostPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // this controller is used to get & show live post data
     final streamPost = ref.watch(streamPostProvider(id));
     return streamPost.when(
       data: (post) => post != null
@@ -19,10 +22,10 @@ class EditPostPage extends ConsumerWidget {
             )
           : Scaffold(
               appBar: AppBar(
-                title: const Text('Edit Post'),
+                title: Text('Edit Post'.hardcoded),
               ),
-              body: const Center(
-                child: Text('Post not found'),
+              body: EmptyPlaceholder(
+                message: 'Post not found'.hardcoded,
               ),
             ),
       error: (error, trace) => Text(

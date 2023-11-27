@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blog_with_firebase_riverpod/src/localization/string_hardcoded.dart';
+
+import '../../common_widgets/empty_placeholder.dart';
 
 class NotFoundPage extends StatelessWidget {
   const NotFoundPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Error'),
+    return Scaffold(
+      body: EmptyPlaceholder(
+        message: 'Oops'.hardcoded,
+        showGoHomeButton: true,
       ),
     );
   }

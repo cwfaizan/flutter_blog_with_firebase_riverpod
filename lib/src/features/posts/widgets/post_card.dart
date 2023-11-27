@@ -1,10 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_blog_with_firebase_riverpod/src/features/posts/models/post.dart';
+import 'package:flutter_blog_with_firebase_riverpod/src/localization/string_hardcoded.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../common_widgets/alert_dialogs.dart';
 import '../../../routing/app_router.dart';
 import '../controllers/post_controller.dart';
 
@@ -33,7 +33,7 @@ class PostCard extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                deletePost(ref, post.id);
+                _deletePost(context, ref, post.id);
               },
               icon: const Icon(Icons.delete),
             ),
@@ -43,12 +43,26 @@ class PostCard extends StatelessWidget {
     );
   }
 
-  void deletePost(WidgetRef ref, PostID id) async {
-    final success =
-        await ref.read(postControllerProvider.notifier).deletePost(id);
-    // show success msg to user, don't show msg on console
-    if (success) {
-      log('Object: Post successfully deleted');
+  void _deletePost(BuildContext context, WidgetRef ref, PostID id) async {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    final delete = await showAlertDialog(
+      context: context,
+      title: 'Are you sure?'.hardcoded,
+      cancelActionText: 'Cancel'.hardcoded,
+      defaultActionText: 'Delete'.hardcoded,
+    );
+    if (delete == true) {
+      final success =
+          await ref.read(postControllerProvider.notifier).deletePost(id);
+      if (success) {
+        scaffoldMessenger.showSnackBar(
+          SnackBar(
+            content: Text(
+              'Post successfully deleted'.hardcoded,
+            ),
+          ),
+        );
+      }
     }
   }
 }
