@@ -47,14 +47,10 @@ class PostRepository {
   // create new post
   Future<void> savePost(Post post) {
     return _firestore.doc(postPath(post.id)).set(
-      {
-        'id': post.id,
-        'title': post.title,
-        'description': post.description,
-      },
-      // use merge: true to keep old fields (if any)
-      SetOptions(merge: true),
-    );
+          post.toMap(),
+          // use merge: true to keep old fields (if any)
+          SetOptions(merge: true),
+        );
   }
 
   // update old post
